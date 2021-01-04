@@ -1,0 +1,26 @@
+.work {
+  background-color: $bright-red;
+  padding: 10rem 2rem;
+  @include laptop() {
+    @include flex(center, space-between);
+  };
+  @include laptop() {   
+    padding: 5rem 10.5rem;    
+  }
+
+  .content {
+    @include size(); 
+    @include laptop() {
+      width: 45%;
+      text-align: left;
+    }
+    
+    .title {
+      font-size: 4rem;
+      color: $vary-light-gray;
+      @include laptop() {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.hero {
+  @include size();
+  @include flex() {
+    flex-direction: column;
+  };
+  @include laptop() {
+    flex-direction: row-reverse;
+  };
+
+  .images {
+    @include size(100%, 50%); 
+    @include laptop() {
+      @include size(50%, auto); 
+    };
+
+    .image { 
+      @include size();
+    }
+  }
+
+  .content {
+    @include size(100%, auto); 
+    @include laptop() {
+      text-align: left;
+      @include size(50%, auto); 
+    };
+
+    .text {
+      @include laptop() {
+        width: 60%;
+      }; 
+    }
+
+    .box {
+      @include laptop() {
+        text-align: left;
+      };
+    }
+  }
+}

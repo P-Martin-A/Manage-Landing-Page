@@ -1,0 +1,83 @@
+.slider {
+  @include flex(center, space-between) {
+    flex-direction: column;
+  };
+
+  .figures, .checks {
+    margin-bottom: 2.5rem;
+    @include laptop() {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .figures { 
+    text-align: center;
+    position: relative;
+    @include size(100%, 25rem);
+    @include laptop() {
+      position: initial;
+      height: auto;
+      @include flex(center, space-between);
+    };
+
+    .figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity .5s;
+      background-color: $vary-light-gray;
+      @include size();
+      @include laptop() {
+        position: initial;
+        opacity: 1;
+        width: 20%;
+        @include flex() {
+          flex-direction: column;
+        };
+      };    
+
+      &:first-child, &:target {
+        opacity: 1;
+      }
+
+      .image {
+        object-fit: cover;
+        @include size(25%, auto);
+      }
+      
+      .title {
+        font-size: 2rem;
+      }
+      
+      .text {
+        font-size: 1.5rem;
+        @include laptop() {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .checks {
+    @include flex();
+    @include size();
+    @include laptop() {
+      display: none
+    };
+
+    .check {
+      margin: 0 .5rem;
+      
+      .radio {
+        border: .1rem solid $bright-red;
+        border-radius: 50%;
+        padding: .1rem .8rem;
+
+        &.active, &:hover {
+          background-color: $bright-red;
+        }
+      }
+    }
+  }
+} 

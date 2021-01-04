@@ -1,0 +1,67 @@
+.navigation {
+  @include laptop() {
+    @include size(65%, 100%);
+    @include flex(center, space-between);
+  };
+
+  .image {
+    cursor: pointer;
+    @include laptop() {
+      display: none !important;
+    };
+    
+    &.menu {
+      display: inline-block;
+      
+      &.inactive {
+        display: none;
+      }
+    }
+
+    &.close {
+      display: none;
+
+      &.active {
+        display: inline-block;
+      }
+    }
+  }
+
+  .list {
+    display: none;
+    position: relative;
+    @include laptop() {
+      display: initial;
+      width: 50%;
+      @include flex(center, space-between);
+    };
+
+    &.active {
+      display: inline-block;
+      position: absolute;
+      left: 2rem;
+      right: 2rem;
+      top: 12rem;
+      background-color: $vary-light-gray;
+      box-shadow: 0 2rem 5rem $very-dark-blue;
+      text-align: center;
+      padding: 1rem 0;
+      border-radius: 1rem;
+
+      .item {
+        margin: 2rem 0;
+
+        .link {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .box {
+    display: none;
+    @include laptop() {
+      display: initial
+    };
+  }
+}

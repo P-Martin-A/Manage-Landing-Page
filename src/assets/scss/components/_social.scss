@@ -1,0 +1,144 @@
+.social {
+  display: grid;
+  gap: 5rem 0;
+  grid-template-areas:
+    'form'
+    'list'
+    'images'
+    'logo'
+    'copy-right'
+  ;
+  background-color: $very-dark-blue;
+  padding: 5rem 2rem;
+  @include laptop() {
+    padding: 5rem 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      'logo logo list list list list list list list list form form'
+      'images images list list list list list list list list copy-right copy-right'
+    ;
+  };
+
+  .form {
+    grid-area: form;
+    @include size();
+    @include laptop() {
+      grid-column: 9 / 12;
+    };
+    
+    .form-group {
+      @include flex(center, space-evenly);
+
+      .form-input {
+        border: none;
+        border-radius: 2rem;
+        padding: 1.5rem 2.5rem;
+        font-size: 1.5rem;
+        color: $bright-red;
+        @include laptop() {
+          width: 70%;
+          padding: 1rem;
+          font-size: 1.2rem;
+        };
+
+        &:focus {
+          border: .2rem solid $bright-red;
+        }
+      }
+      
+      .btn {
+        display: inline-block;
+        color: $vary-light-gray;
+        background-color: $bright-red;
+        padding: 1.5rem 2.5rem;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+        @include laptop() {
+          width: 20%;
+          padding: 1rem;
+          font-size: 1.2rem;
+        };
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+  .list {
+    grid-area: list;
+    padding: 0 2rem;
+    @include flex(center, initial) {
+      flex-wrap: wrap;
+    };
+    @include laptop() {
+      padding: 0;
+      grid-column: 5 / 9;
+    };
+
+    .item {
+      padding: 0 2rem;
+      margin: 1rem 0;
+      width: 50%;
+
+      .link {        
+        font-size: 1.5rem;
+        color: $vary-light-gray;
+        @include laptop() {
+          font-size: 1.2rem;
+        };
+
+        &:hover {
+          color: $bright-red;
+        }
+      }
+    }
+  }
+
+  .images {
+    grid-area: images;
+    @include flex();
+    @include laptop() {
+      grid-column: 2 / 4;
+    };
+
+    .image {
+      margin: 0 auto;
+      @include size(8%, auto);
+      @include laptop() {
+        @include size(10%, auto);
+      };
+    }
+  }
+
+  .logo, .copy-right {
+    text-align: center;
+  }
+
+  .logo {
+    grid-area: logo;
+    @include laptop() {
+      grid-column: 2 / 4;
+      @include flex();
+    };
+  }
+
+  .copy-right {
+    grid-area: copy-right;
+    @include laptop() {
+      grid-column: 9 / 12;
+      text-align: right
+    };
+
+    .c-r {
+      color: $dark-grayish-blue;
+      font-size: 1.5rem;
+      @include laptop() {
+        font-size: 1.2rem;
+      };
+    }
+  }
+}

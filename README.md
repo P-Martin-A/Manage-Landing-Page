@@ -1,5 +1,7 @@
 # manage-landing-page
+# Frontend Mentor - Manage landing page
 
+![Design preview for the Manage landing page coding challenge](./src/assets/design/desktop-preview.jpg)
 ## Project setup
 ```
 npm install

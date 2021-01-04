@@ -1,0 +1,22 @@
+.about {
+  @include flex(center, space-between) {
+    flex-direction: column;
+  };
+  @include laptop() {
+    flex-direction: row;
+  };
+
+  .content {
+    @include laptop() {
+      width: 50%;
+      align-self: flex-start;
+      text-align: left
+    };
+
+    .text {
+      @include laptop() {
+        width: 60%;
+      };
+    }
+  }
+} 

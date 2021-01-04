@@ -1,0 +1,58 @@
+// SIZE
+@mixin size($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+// DISPLAY-FLEX
+@mixin flex($align-items: center, $justify-content: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  @content;
+}
+
+@mixin grid() {
+  display: grid;
+  gap: 2rem 0;
+  grid-template-areas: 
+    'header'
+    'main'
+    'section'
+    'footer'
+  ;
+  @include laptop() {
+    gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+      'header header header header header header header header header header header header'
+      'main main main main main main main main main main main main'
+      'section section section section section section section section section section section section'      
+      'footer footer footer footer footer footer footer footer footer footer footer footer'
+    ;
+  };
+}
+
+// MEDIA QUERIES
+
+// TABLET
+@mixin tablet() {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+
+// LAPTOP
+@mixin laptop() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// DESKTOP
+@mixin desktop() {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}

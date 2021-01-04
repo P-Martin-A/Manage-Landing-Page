@@ -1,0 +1,13 @@
+.section {
+  grid-area: section;
+  @include laptop() {
+    grid-column: 2 / 12;
+  };
+  @include desktop() {
+    grid-column: 3 / 11;
+  };
+  
+  .about, .slider {
+    margin-bottom: 5rem;
+  }
+}

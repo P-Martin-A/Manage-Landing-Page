@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap');
+
+// TOOLS
+@import './tools/var';
+@import './tools/mixins';
+
+// BASE
+@import './base/base';
+
+// LAYOUTS 
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/section';
+@import './layouts/footer';
+
+// COMPONENTS
+@import './components/navigation';
+@import './components/hero';
+@import './components/about';
+@import './components/articles';
+@import './components/slider';
+@import './components/work';
+@import './components/social';
+

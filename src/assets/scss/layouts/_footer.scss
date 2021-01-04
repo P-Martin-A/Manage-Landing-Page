@@ -1,0 +1,17 @@
+.footer {
+  grid-area: footer;
+  
+  &.container {
+    margin-bottom: 0;
+    @include laptop() {
+      padding-bottom: 0;
+    }
+  }
+
+  .work, .social {
+    margin: 0 -2rem;
+    @include laptop() {
+      margin: 0;
+    }
+  }
+}

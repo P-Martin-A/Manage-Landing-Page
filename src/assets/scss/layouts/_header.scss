@@ -1,0 +1,17 @@
+.header {
+  grid-area: header;
+  @include flex(center, space-between);
+  @include laptop() {
+    grid-column: 2 / 12;
+  };
+  @include desktop() {
+    grid-column: 3 / 11;
+  };
+  
+  .title {
+
+    .logo {
+      @include size();
+    }
+  }
+}
